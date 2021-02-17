@@ -1,0 +1,279 @@
+body {
+    height: 100vh;
+    background: #f2f2f2 !important;
+}
+
+.navbar-bg-colour {
+    background-color: #28a745;
+    color: white;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.collection-row {
+    padding: 10px;
+    display: flex;
+    border-bottom: #424141 solid;
+    background: white;
+    width: 98%;
+    margin: 15px 1%;
+    border-radius: 4px;
+    border-right: #424141 solid;
+}
+
+.collection-table {
+    width: 100%;
+    display: inline-block;
+}
+
+.user-initals {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 30px;
+    flex-grow: 1;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+.owes-you {
+    font-size: 10px;
+    color: red;                                
+}
+
+.debt-item-name {
+    font-size: 12px;
+    color: black;
+    font-weight: 100;                                
+}
+
+.you-owe {
+    font-size: 10px;
+    color: green;
+}
+
+.item-debt {
+    text-align: end;
+    width: 50px;
+    margin-left: 2%;
+
+}
+.item-price {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.item-name {
+    flex-grow: 100;
+    text-align: end;
+    width: 50px;
+    margin-left: 2%;
+}
+
+.sort-by-user {
+    flex-grow: 1;
+    margin-left: 2%;
+}
+
+.sort-by-amount, .sort-by-item {
+    flex-grow: 100;
+    text-align: end;
+}
+
+.icon-container {
+    display: inline-block;
+    width: 20px;
+    font-size: 12px;
+}
+
+.table-heading {
+    font-size: 14px;
+    vertical-align: super;
+}
+
+.table-heading::before {
+    content: "  ";
+}
+
+.collection-table-heading {
+    background: #424141;
+    color: white;
+}
+
+.glyphicon-chevron-down:hover, .glyphicon-chevron-up:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.side-bar {
+    vertical-align: top;
+    width: 20%;
+    display: inline-block;
+}
+
+.add-item {
+    margin-top: 10px;
+    padding: 10px 30px;
+    background: green;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.add-member {
+    display: block;
+    margin: 10px;
+    width: 50%;
+}
+
+.main-nav {
+    background: green;
+    display: flex;
+    flex-direction: row;
+}
+
+.logoBtn {
+    width: 100%;
+}
+
+.logo {
+    display: inline-block;
+    width: 60%;
+}
+
+.logo h1 {
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+/* .showNav {
+    display: inline-block;
+} */
+
+.main-nav li {
+    align-items: flex-end;
+    list-style: none;
+}
+
+div a,  li a {
+    color: white;
+}
+
+.add-item-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.add-item-modal-container {
+    width: 80%;
+    display: inline-block; 
+    background: white;
+    text-align: end;
+}
+
+.add-item-modal-content {
+    text-align: center;
+}
+
+.modal-close {
+    padding: 10px;
+    color: black;
+}
+
+.item-form input {
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.modal-btns {
+    text-align: center;
+}
+
+.switch-container {
+    text-align: start;
+    width: 40px;
+    display: inline-block;
+    height: 25px;
+    margin: 20px;
+    border: solid 2px;
+    border-radius: 30px;
+}
+
+.switch {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    background:red;
+    border-radius: 50%;
+    position: relative;
+    transition: margin-left;
+    transition-duration: 0.3s;
+}
+
+
+#percentage-switch {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+#percentage-switch:checked {
+    margin-left: 60%;
+    position: absolute;
+    z-index: 2;
+}
+
+#percentage-switch:checked + .switch {
+    background: green;
+    margin-left: 60%;
+}
+
+.switch-container-2 {
+    position: relative;
+    height: 100%;
+}
+
+.recepient-form select{
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background: green;
+    color: white;
+    border-radius: 5px;
+}
+
+.recepient-form input {
+    font-size: 14px;
+    padding: 5px;
+}
+
+/* create group css */
+
+.create-group-form {
+    text-align:center;
+    padding: 20px;
+}
+
+.create-group-form-container {
+    width: 50%;
+    display: inline-block;
+}
+
+.create-group-form-header {
+    background: green;
+    color: white;
+    padding: 1px 0px;
+}
+
+.create-group-form-body {
+    padding: 20px 0px;
+    background: white;
+}

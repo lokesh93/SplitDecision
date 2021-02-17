@@ -1,0 +1,41 @@
+{
+  "name": "printapal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "node server.js --hot --inline",
+    "start:dev": "webpack-dev-server -d --config ./webpack.config.js"
+  },
+  "author": "Lokesh Podipireddy",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@hot-loader/react-dom": "^16.8.6",
+    "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.0",
+    "ls": "^0.2.1",
+    "react": "^16.8.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-react-html-attrs": "^3.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "nodeman": "^1.1.2",
+    "nodemon": "^1.19.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
