@@ -9,6 +9,7 @@ import {
 
 import Login from '../views/login.jsx';
 import CreateGroup from '../views/creategroup.jsx';
+import Home from '../views/home.jsx';
 
 
 class Routes extends Component {
@@ -16,7 +17,7 @@ class Routes extends Component {
     return (
           <div id="go">
             <Router>
-                <Route path='/' component={Login} exact/>
+                <Route path='/' component={Home} exact/>
                 <Route path='/login' component={Login}/>
                 <Route path='/creategroup' component={CreateGroup} />
             </Router>

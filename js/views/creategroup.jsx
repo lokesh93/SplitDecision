@@ -38,6 +38,11 @@ class CreateGroup extends Component {
 
     }
 
+    saveGroup()
+    {
+        console.log("this.state", this.state);
+    }
+
     render() {
         let members = this.state.members.map((member, index) => {
             member = (<div key={index} className="col-xs-12">
@@ -67,7 +72,8 @@ class CreateGroup extends Component {
                                 </div>
                                 <div className="row">
                                     <div className="col-xs-12">
-                                        <button onClick={this.addMember.bind(this)}>+</button>
+                                        <button className="add-item" onClick={this.addMember.bind(this)}>Add Member</button>
+                                        <button className="add-item" onClick={this.saveGroup.bind(this)}>Save Group</button>
                                     </div>
                                 </div>
                             </div>

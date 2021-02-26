@@ -76,6 +76,8 @@ WSGI_APPLICATION = 'printapal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+print(BASE_DIR)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
