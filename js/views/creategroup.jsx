@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from '../components/navigation.jsx';
+import axios from 'axios';
 
 
 class CreateGroup extends Component {
@@ -14,7 +15,16 @@ class CreateGroup extends Component {
         }
     }
 
-    addMember() {
+    componentDidMount()
+    {
+        axios.get(`http://127.0.0.1:8000/creategroup/1/`)
+            .then(res => {
+                console.log("res", res);
+            });
+    }
+
+    addMember() 
+    {
         let { members } = this.state;
         members.push({name: ""});
         this.setState({members: members})
@@ -41,6 +51,22 @@ class CreateGroup extends Component {
     saveGroup()
     {
         console.log("this.state", this.state);
+
+        let { members, groupName } = this.state;
+
+
+        let createGroupJson = {
+            name: groupName,
+            group_members: members
+        };
+
+        axios.post(`http://127.0.0.1:8000/creategroup`, createGroupJson)
+            .then(res => {
+            console.log(res);
+            window.location.assign("/group/" + res.data.id);
+            //console.log(res.data);
+            });
+
     }
 
     render() {

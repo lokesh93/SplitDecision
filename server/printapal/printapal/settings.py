@@ -25,9 +25,14 @@ SECRET_KEY = 'aa(f&tiqqu1jb%s6c3h2m6@b95)c9$cu+vx@5*z#dhz^^h7)&e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS=['http://localhost:3000', '127.0.0.1']
 
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+       'http://localhost:3000',
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'server',
     'splitdecisionApi',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'printapal.urls'

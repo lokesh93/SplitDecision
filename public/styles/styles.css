@@ -122,10 +122,24 @@ body {
 
 }
 
+.add-item-main {
+    white-space: nowrap;
+    margin: 0% 50%;
+}
+
 .add-member {
     display: block;
     margin: 10px;
     width: 50%;
+}
+
+.select-current-user {
+    background: green;
+    border-radius: 15px;
+    font-size: 18px;
+    border-color: white;
+    color: white;
+    padding: 10px;
 }
 
 .main-nav {
@@ -170,6 +184,7 @@ div a,  li a {
     z-index: 2;
     background: rgba(0,0,0,0.7);
     text-align: center;
+    padding: 50px;
 }
 
 .add-item-modal-container {

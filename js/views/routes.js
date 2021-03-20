@@ -17,9 +17,9 @@ class Routes extends Component {
     return (
           <div id="go">
             <Router>
-                <Route path='/' component={Home} exact/>
-                <Route path='/login' component={Login}/>
-                <Route path='/creategroup' component={CreateGroup} />
+                <Route path='/' component={CreateGroup} exact/>
+                <Route path='/group/:id' component={Home}/>
+                {/* <Route path='/group/:id' component={Home}/> */}
             </Router>
           </div>
 

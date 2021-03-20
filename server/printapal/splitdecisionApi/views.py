@@ -10,8 +10,8 @@ from rest_framework import viewsets
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 
-from .serializers import HeroSerializer, GroupSerializer, GroupMemberSerializer, CreateGroupSerializer
-from .models import Hero, Group, GroupMember
+from .serializers import HeroSerializer, GroupSerializer, GroupMemberSerializer, CreateGroupSerializer, DebtItemSerializer, DebtObligationSerializer
+from .models import Hero, Group, GroupMember, DebtItem, DebtObligation
 from StringIO import StringIO
 
 
@@ -26,13 +26,53 @@ class HeroViewSet(viewsets.ModelViewSet):
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all().order_by('name')
     serializer_class = GroupSerializer
+        
 
 class GroupMemberViewSet(viewsets.ModelViewSet):
     queryset = GroupMember.objects.all().order_by('name')
     serializer_class = GroupMemberSerializer
 
+class DebtItemViewSet(viewsets.ModelViewSet):
+    queryset = DebtItem.objects.all().order_by('name')
+    serializer_class = DebtItemSerializer
 
-# class GroupRoom(View):
+    # def create(self, request):
+    #     # print(request.data)
+    #     serializer = self.serializer_class(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return HttpResponse("yesss")
+    #     else:
+    #         print(serializer.errors)
+    #         return HttpResponse("no") 
+
+class DebtObligationViewSet(viewsets.ModelViewSet):
+    queryset = DebtObligation.objects.all().order_by('debt_item_id')
+    serializer_class = DebtObligationSerializer
+    
+
+
+class DebtItemView(View):
+    serializer_class = DebtItemSerializer
+
+    def get(self, request):
+        debt_obj = DebtItem.objects.get(name="hotel room 2")
+        serializer = DebtItemSerializer(debt_obj)
+        print(debt_obj.debt_obligations.all())
+        print(serializer.data)
+        json = JSONRenderer().render(serializer.data)
+        return HttpResponse(json)
+
+    def post(self, request):
+        stream = StringIO(request.body)
+        data = JSONParser().parse(stream)
+        serializer = self.serializer_class(data=data)  
+        print(data)
+        if serializer.is_valid():
+            serializer.save()
+            return HttpResponse("yesss")
+        else:
+            return HttpResponse("no")
 
 
 
@@ -57,12 +97,11 @@ class GroupCreateView(View):
         stream = StringIO(request.body)
         data = JSONParser().parse(stream)   
         serializer = self.serializer_class(data=data)     
-        print(data['name'])
+        print(data)
         if serializer.is_valid():
             serializer.save()
-            # group = Group(name=data["name"])
-            # group.save()
-            return HttpResponse("yesss")
+            json = JSONRenderer().render(serializer.data)
+            return HttpResponse(json)
         else:
             return HttpResponse("no")
 

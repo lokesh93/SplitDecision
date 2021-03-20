@@ -12,13 +12,14 @@ class Home extends Component {
     }
 
     render() {
+        console.log("props.id", this.props.match.params.id);
         return (
             <div>
-                <Navigation />
+                {/* <Navigation /> */}
                 {/* <h2>It is {this.state.date.toLocaleTimeString()}</h2>
                 <h2>Testing Props {this.props.testText}</h2> */}
                 {/* <Sidebar /> */}
-                <CollectionTable />
+                <CollectionTable groupId={this.props.match.params.id}/>
             </div>
         );
     }

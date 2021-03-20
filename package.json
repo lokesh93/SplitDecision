@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "start": "node server.js --hot --inline",
-    "start:dev": "webpack-dev-server -d --config ./webpack.config.js"
+    "start~~old": "node server.js --hot --inline",
+    "start:dev": "webpack-dev-server -d --config ./webpack.config.js",
+    "start": "webpack-dev-server -d --config ./webpack.config.js"
   },
   "author": "Lokesh Podipireddy",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
+    "heroku": "^7.51.0",
     "html-webpack-plugin": "^4.5.0",
     "ls": "^0.2.1",
     "react": "^16.8.1",
