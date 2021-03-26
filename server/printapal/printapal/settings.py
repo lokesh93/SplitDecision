@@ -41,7 +41,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS=['http://localhost:3000', '127.0.0.1']
+ALLOWED_HOSTS=['http://localhost:3000', '127.0.0.1', 'http://splitdecision.herokuapp.com/', 'https://splitdecision.herokuapp.com/']
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
