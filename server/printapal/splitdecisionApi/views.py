@@ -12,7 +12,7 @@ from rest_framework.renderers import JSONRenderer
 
 from .serializers import HeroSerializer, GroupSerializer, GroupMemberSerializer, CreateGroupSerializer, DebtItemSerializer, DebtObligationSerializer
 from .models import Hero, Group, GroupMember, DebtItem, DebtObligation
-from StringIO import StringIO
+from io import StringIO
 
 
 def index(request):

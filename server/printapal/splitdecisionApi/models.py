@@ -48,11 +48,13 @@ class DebtItem(models.Model):
 class DebtObligation(models.Model):
     debtor = models.ForeignKey(
         GroupMember,
-        related_name="debtor"
+        related_name="debtor",
+        on_delete=models.DO_NOTHING
     )
     creditor = models.ForeignKey(
         GroupMember,
-        related_name="creditor"
+        related_name="creditor",
+        on_delete=models.DO_NOTHING
     )
     amount = models.IntegerField()
     debt_item_id = models.ForeignKey(
