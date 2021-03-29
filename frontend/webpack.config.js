@@ -44,14 +44,14 @@ module.exports = {
     output: {
         path: path.join(__dirname, "public"),
         filename: "bundle.js",
-        publicPath: "/"
+        publicPath: "/public/"
     }, 
     plugins: [
       new HtmlWebPackPlugin({
         template: path.resolve(__dirname, 'public/index.html'),
         filename: 'index.html',
       }),
-      new webpack.HotModuleReplacementPlugin()
+      // new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         contentBase: path.join(__dirname, "public"),

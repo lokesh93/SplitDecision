@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build~~old": "webpack --config webpack.config.js",
-    "build~~old2":  "webpack-dev-server -d --config ./webpack.config.js",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.js",
+    "build~~old2": "webpack-dev-server -d --config ./webpack.config.js",
+    "build~~old": "webpack --mode production",
     "start~~old": "node server.js --hot --inline",
     "start:dev": "webpack-dev-server -d --config ./webpack.config.js",
     "start": "webpack-dev-server -d --config ./webpack.config.js"

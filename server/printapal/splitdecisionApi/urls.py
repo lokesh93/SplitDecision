@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^additem', csrf_exempt(views.DebtItemView.as_view())),
     url(r'^creategroup/(?P<id>[0-9]+)/$', csrf_exempt(views.GroupCreateView.as_view())),
     url(r'creategroup', csrf_exempt(views.GroupCreateView.as_view())),
+    url(r'new', views.index, name='index'),
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

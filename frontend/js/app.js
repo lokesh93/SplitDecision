@@ -20,10 +20,10 @@ const render = (elem) => {
 render(elem2);
 
 
-if (module.hot) {
-  module.hot.accept('./views/routes.js', () => {
-    const Routes = require('./views/routes.js');
-    render(<Routes />);
-  })
-}
+// if (module.hot) {
+//   module.hot.accept('./views/routes.js', () => {
+//     const Routes = require('./views/routes.js');
+//     render(<Routes />);
+//   })
+// }
 

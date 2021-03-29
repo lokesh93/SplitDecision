@@ -14,10 +14,11 @@ import Home from '../views/home.jsx';
 
 class Routes extends Component {
   render() {
+    console.log("gogogo")
     return (
           <div id="go">
             <Router>
-                <Route path='/' component={CreateGroup} exact/>
+                <Route path='/new' component={CreateGroup} exact/>
                 <Route path='/group/:id' component={Home}/>
                 {/* <Route path='/group/:id' component={Home}/> */}
             </Router>

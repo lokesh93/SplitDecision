@@ -16,7 +16,8 @@ from io import StringIO
 
 
 def index(request):
-    return HttpResponse("<h1>MyClub Event Calendar</h1>")
+    # return HttpResponse("<h1>MyClub Event Calendar</h1>")
+    return render(request, "index.html")
 
 
 class HeroViewSet(viewsets.ModelViewSet):
@@ -105,3 +106,5 @@ class GroupCreateView(View):
         else:
             return HttpResponse("no")
 
+
+    
