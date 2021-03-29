@@ -1,1 +1,1 @@
-web: gunicorn server.printapal.printapal.wsgi
+web: gunicorn --pythonpath server.printapal printapal.wsgi
