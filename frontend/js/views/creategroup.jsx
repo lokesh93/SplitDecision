@@ -63,7 +63,7 @@ class CreateGroup extends Component {
         axios.post(`http://127.0.0.1:8000/creategroup`, createGroupJson)
             .then(res => {
             console.log(res);
-            window.location.assign("/group/" + res.data.id);
+            window.location.assign("/app/group/" + res.data.id);
             //console.log(res.data);
             });
 
