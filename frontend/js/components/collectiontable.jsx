@@ -32,7 +32,7 @@ class CollectionTable extends Component {
     {
         if (this.props.groupId)
         {
-            axios.get(`http://127.0.0.1:8000/groups/` + this.props.groupId + `/?format=json`, {
+            axios.get(`/groups/` + this.props.groupId + `/?format=json`, {
                 cancelToken: cancelTokenSource.token
             })
                 .then(res => {
@@ -80,11 +80,11 @@ class CollectionTable extends Component {
         console.log(itemInfo)
         if (!isEdit)
         {
-            axios.post("http://127.0.0.1:8000/debtitems/", itemInfo).then((res) => this.refreshHandler());
+            axios.post("/debtitems/", itemInfo).then((res) => this.refreshHandler());
         }
         else 
         {
-            axios.put("http://127.0.0.1:8000/debtitems/" + itemInfo.id + "/", itemInfo).then((res) => this.refreshHandler());
+            axios.put("/debtitems/" + itemInfo.id + "/", itemInfo).then((res) => this.refreshHandler());
         }
         
     }

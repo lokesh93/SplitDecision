@@ -17,7 +17,7 @@ class CreateGroup extends Component {
 
     componentDidMount()
     {
-        axios.get(`http://127.0.0.1:8000/creategroup/1/`)
+        axios.get(`/creategroup/1/`)
             .then(res => {
                 console.log("res", res);
             });
@@ -60,7 +60,7 @@ class CreateGroup extends Component {
             group_members: members
         };
 
-        axios.post(`http://127.0.0.1:8000/creategroup`, createGroupJson)
+        axios.post(`/creategroup`, createGroupJson)
             .then(res => {
             console.log(res);
             window.location.assign("/app/group/" + res.data.id);
