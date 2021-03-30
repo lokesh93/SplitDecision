@@ -10,6 +10,7 @@ import {
 import Login from '../views/login.jsx';
 import CreateGroup from '../views/creategroup.jsx';
 import Home from '../views/home.jsx';
+import About from '../views/about.jsx';
 
 
 class Routes extends Component {
@@ -17,6 +18,9 @@ class Routes extends Component {
     console.log("gogogo")
     return (
           <div id="go">
+            <Router basename="/about">
+              <Route path='/' component={About} exact/>
+            </Router>
             <Router basename='/app'>
                 <Route path='/' component={CreateGroup} exact/>
                 <Route path='/group/:id' component={Home}/>

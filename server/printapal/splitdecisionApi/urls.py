@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^creategroup/(?P<id>[0-9]+)/$', csrf_exempt(views.GroupCreateView.as_view())),
     url(r'creategroup', csrf_exempt(views.GroupCreateView.as_view())),
     url(r'app', views.index, name='index'),
+    url(r'about', views.index, name='index'),
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
