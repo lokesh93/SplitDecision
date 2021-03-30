@@ -12,7 +12,7 @@ from rest_framework.renderers import JSONRenderer
 
 from .serializers import HeroSerializer, GroupSerializer, GroupMemberSerializer, CreateGroupSerializer, DebtItemSerializer, DebtObligationSerializer
 from .models import Hero, Group, GroupMember, DebtItem, DebtObligation
-from io import StringIO
+from io import StringIO, BytesIO
 
 
 def index(request):
@@ -95,7 +95,7 @@ class GroupCreateView(View):
 
     def post(self, request):
         # create stream object and deserialize
-        stream = StringIO(request.body)
+        stream = BytesIO(request.body)
         data = JSONParser().parse(stream)   
         serializer = self.serializer_class(data=data)     
         print(data)

@@ -17,8 +17,8 @@ class Routes extends Component {
     console.log("gogogo")
     return (
           <div id="go">
-            <Router>
-                <Route path='/new' component={CreateGroup} exact/>
+            <Router basename='/app'>
+                <Route path='/' component={CreateGroup} exact/>
                 <Route path='/group/:id' component={Home}/>
                 {/* <Route path='/group/:id' component={Home}/> */}
             </Router>
