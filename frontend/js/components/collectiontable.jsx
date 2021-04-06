@@ -24,7 +24,8 @@ class CollectionTable extends Component {
             isAddItemModalOpen: false,
             debtArray: debtArr,
             groupMembers: [],
-            currentGroupMember: ""
+            currentGroupMember: "",
+            name: ""
         };
     }
 
@@ -36,13 +37,14 @@ class CollectionTable extends Component {
                 cancelToken: cancelTokenSource.token
             })
                 .then(res => {
-                    let debtArray = ParseDataUtil.parseGroup(res);
+                    let { debtArray, name } = ParseDataUtil.parseGroup(res);
                     let groupMembers = ParseDataUtil.parseGroupForMembers(res);
                     console.log("groupMembers", groupMembers);
                     this.setState({
                         debtArray: debtArray, 
                         groupMembers: groupMembers, 
                         rawDebt: ParseDataUtil.getRawDebtItems(res), 
+                        name: name,
                         editDebt: null, 
                         isAddItemModalOpen: false, 
                         editMode: false
@@ -148,11 +150,9 @@ class CollectionTable extends Component {
 
             let groupMembersOptions = this.state.groupMembers.map((gm) => {
                 return (<option value={gm.name} selected={gm.name == this.state.currentGroupMember}>{gm.name}</option>)
-            })
-            
-            let groupMembersSelect = (<select onChange={this.setCurrentGroupMember.bind(this)}>{groupMembersOptions}</select>);
+            });
 
-            let users = this.state.groupMembers.map((gm) => { return gm.name })
+            let users = this.state.groupMembers.map((gm) => { return gm.name });
             let navi = ( <Navigation 
                             usernames={users}
                             setCurrentGroupMember={this.setCurrentGroupMember.bind(this)} />);
@@ -160,8 +160,8 @@ class CollectionTable extends Component {
 
         let collectionTable =   (<div>
                                    {navi}
+                                   <h2 className="group-name">{this.state.name}</h2>
                                     <div className="collection-table">
-                                        {groupMembersSelect}
                                         <div className="collection-row collection-table-heading">
                                             <div className="sort-by-user">
                                                 <span className="table-heading">Users</span>

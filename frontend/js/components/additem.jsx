@@ -152,7 +152,7 @@ class AddItem extends Component {
                         {debtOwnerMenu}
                     </select>
 
-                    <div className="switch-container">
+                    {/* <div className="switch-container">
                         <div className="switch-container-2">
                             <input type="checkbox" id="percentage-switch" />
                             <div className="switch">
@@ -160,9 +160,9 @@ class AddItem extends Component {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <input name={debtAmountName} type="number" value={debtObj.amount} onChange={this.handleNameChange.bind(this)}/>
+                    <input style={{marginLeft: "15px"}} name={debtAmountName} type="number" value={debtObj.amount} onChange={this.handleNameChange.bind(this)}/>
                 </div> );
         });
 
@@ -196,9 +196,10 @@ class AddItem extends Component {
                             {this.renderDebtOWnerRows()}
                         </div>
 
-                        <button className="add-item add-item-main" onClick={this.addAnotherRow.bind(this)}>Add Another Debt Owner</button>
+                        
                     </div>                  
                     <div className="modal-btns">
+                        <button className="add-item" onClick={this.addAnotherRow.bind(this)}>Add Another Debt Owner</button>
                         <button className="save-btn add-item" onClick={this.saveDebt.bind(this)}>Save</button>
                     </div>
                 </div>

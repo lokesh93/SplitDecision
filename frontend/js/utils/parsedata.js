@@ -1,5 +1,4 @@
 exports.parseGroup = (res) => {
-    // console.log("dataaaaa.,.,.,", data);
     let {data} = res;
     let debtArr = [];
     data.debt_items.forEach(di => {
@@ -12,13 +11,11 @@ exports.parseGroup = (res) => {
                 let debtDirection = "owes " + dbo.creditor.name;
                 return {debtOwner: dbo.debtor.name, debtDirection:debtDirection, debtAmount: dbo.amount, debtItem: name, id: id}
             }));
-                //return {debtOwner: do.debtor, debtDirection:"owes you", debtAmount: do.amount, debtItem: name}
 
         }
     });
 
-    console.log("debtArr", debtArr)
-    return debtArr;
+    return { debtArray: debtArr, name: data.name };
 };
 
 exports.parseGroupForMembers = (res) => {

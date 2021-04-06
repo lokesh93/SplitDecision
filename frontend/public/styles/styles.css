@@ -293,3 +293,7 @@ div a,  li a {
     padding: 20px 0px;
     background: white;
 }
+
+.group-name {
+    text-align: center;
+}
