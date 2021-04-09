@@ -26,10 +26,11 @@ class Navigation extends Component {
                 </div>
                 <div className="current-user-container col-xs-3">
                   <ul className="row" style={{alignItems: "center"}}>
-                      <li className="col-xs-3">
+                    {selectCurrentUser ? (<li className="col-xs-3">
                         Current User:&nbsp;&nbsp;       
                         {selectCurrentUser}
-                      </li>
+                      </li>) : null}
+
                   </ul>
                 </div>
               </div>

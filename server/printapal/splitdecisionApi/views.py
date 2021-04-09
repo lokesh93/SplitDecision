@@ -13,15 +13,9 @@ from rest_framework.renderers import JSONRenderer
 from .serializers import HeroSerializer, GroupSerializer, GroupMemberSerializer, CreateGroupSerializer, DebtItemSerializer, DebtObligationSerializer
 from .models import Hero, Group, GroupMember, DebtItem, DebtObligation
 from io import StringIO, BytesIO
-import requests
 
 
 def index(request):
-    # return HttpResponse("<h1>MyClub Event Calendar</h1>")
-    return render(request, "index.html")
-
-def index(request):
-    # return HttpResponse("<h1>MyClub Event Calendar</h1>")
     return render(request, "index.html")
 
 
@@ -42,15 +36,6 @@ class DebtItemViewSet(viewsets.ModelViewSet):
     queryset = DebtItem.objects.all().order_by('name')
     serializer_class = DebtItemSerializer
 
-    # def create(self, request):
-    #     # print(request.data)
-    #     serializer = self.serializer_class(data=request.data)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return HttpResponse("yesss")
-    #     else:
-    #         print(serializer.errors)
-    #         return HttpResponse("no") 
 
 class DebtObligationViewSet(viewsets.ModelViewSet):
     queryset = DebtObligation.objects.all().order_by('debt_item_id')
@@ -110,25 +95,6 @@ class GroupCreateView(View):
             return HttpResponse(json)
         else:
             return HttpResponse("no")
-
-
-class PageView(View):
-
-    def get(self, request):
-        r = requests.get(url="https://qa5.shoplogix.com/Web/Api/Export/CurrentJob", auth=('administrator', 'YMe.?xepZA'))
-        print(r.status_code)
-        print(r.json())
-        return HttpResponse( JSONRenderer().render(r.json()) )
-
-    def post(self, request):
-        stream = BytesIO(request.body)
-        data = JSONParser().parse(stream)
-        print(data)
-        r = requests.post(url="https://qa5.shoplogix.com/web/api/msg/machines/51CB0F18-05E0-40F1-A98F-AD1803A92C0B/?1.16.18",data=request.body, auth=('administrator', 'YMe.?xepZA'))
-        print(r.status_code)
-        # print(r.errors)
-
-        return HttpResponse("yes paged")   
 
 
 
