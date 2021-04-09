@@ -27,6 +27,5 @@ urlpatterns = [
     url(r'creategroup', csrf_exempt(views.GroupCreateView.as_view())),
     url(r'app', views.index, name='index'),
     url(r'about', views.index, name='index'),
-    url(r'page', csrf_exempt(views.PageView.as_view())),
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
