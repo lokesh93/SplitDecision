@@ -38,7 +38,7 @@ class About extends Component {
                                 </li>
                                 <br /><br />
                                 <div style={{textAlign: "center"}}>
-                                    <img src="/static/screenshots/createGroup.jpg" style={{ height: "50vh"}} />
+                                    <img src="/static/screenshots/createGroup.JPG" style={{ height: "50vh"}} />
                                 </div>
                                 <br /><br />
                                 <li>
@@ -47,7 +47,7 @@ class About extends Component {
                                 </li>
                                 <br /><br />
                                 <div style={{textAlign: "center"}}>
-                                    <img src="/static/screenshots/setCurrentUser.jpg" style={{ height: "30vh"}} />
+                                    <img src="/static/screenshots/setCurrentUser.JPG" style={{ height: "30vh"}} />
                                 </div>
                                 <br /><br />
                                 <li>
@@ -57,7 +57,7 @@ class About extends Component {
                                 </li>
                                 <br /><br />
                                 <div style={{textAlign: "center"}}>
-                                    <img src="/static/screenshots/addItem.jpg" style={{ height: "30vh"}} />
+                                    <img src="/static/screenshots/addItem.JPG" style={{ height: "30vh"}} />
                                 </div>
                                 <br /><br />
                                 <li>
@@ -65,7 +65,7 @@ class About extends Component {
                                 </li>
                                 <br /><br />
                                 <div style={{textAlign: "center"}}>
-                                    <img src="/static/screenshots/addedItems.jpg" style={{ height: "30vh"}} />
+                                    <img src="/static/screenshots/addedItems.JPG" style={{ height: "30vh"}} />
                                 </div>
                                 <br /><br />
                              </ol>
