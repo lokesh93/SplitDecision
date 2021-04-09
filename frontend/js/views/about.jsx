@@ -28,22 +28,49 @@ class About extends Component {
                                 to learn about django framework.
                             </p>
 
+
+
                             <ol  style={{textAlign: "left"}}>
                                 <li>
                                     You simply go to this <a style={{color: "blue"}} href="https://splitdecision.herokuapp.com/app" target="_blank">link</a>.
                                     Enter the name of your group and the members involved. Once you click submit, it should redirect you to 
                                     group page.
                                 </li>
+                                <br /><br />
+                                <div style={{textAlign: "center"}}>
+                                    <img src="/static/screenshots/createGroup.jpg" style={{ height: "50vh"}} />
+                                </div>
+                                <br /><br />
                                 <li>
                                     Once you are on the group page, on the top right corner of the navigation bar is the current user setting.
                                     Select your name from this menu.
                                 </li>
+                                <br /><br />
+                                <div style={{textAlign: "center"}}>
+                                    <img src="/static/screenshots/setCurrentUser.jpg" style={{ height: "30vh"}} />
+                                </div>
+                                <br /><br />
                                 <li>
-                                    From here you can add your debted items and keep track of who owes whom money.
+                                    Click Add Items, a modal should popup with "Name" and "Price". Enter the item that you want to split. After which click 
+                                    "Add Another Debt Owner". From here, select the person you wish to split the cost with and enter the amount of the split.
+                                    You can add more than one debt owner. An example can be found below
                                 </li>
+                                <br /><br />
+                                <div style={{textAlign: "center"}}>
+                                    <img src="/static/screenshots/addItem.jpg" style={{ height: "30vh"}} />
+                                </div>
+                                <br /><br />
+                                <li>
+                                    Click Save once everything is filled out. The debts appear similar to the image below.
+                                </li>
+                                <br /><br />
+                                <div style={{textAlign: "center"}}>
+                                    <img src="/static/screenshots/addedItems.jpg" style={{ height: "30vh"}} />
+                                </div>
+                                <br /><br />
                              </ol>
 
-                             <p><b>Note</b>: This is a work in progress application, features to come are: user management module, Improved 
+                             <p><b>Note</b>: This is a work in progress application, features to come are: deletion of debts, user management module, Improved 
                              UI design, mathematical validations and sorting/fitlering</p>
 
                         </div>

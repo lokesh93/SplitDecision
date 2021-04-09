@@ -12,6 +12,17 @@ body {
     color: white !important;
 }
 
+.current-user-container ul{
+    float: right;
+    padding-top: 15px;
+}
+
+.current-user-container li{
+    color: white;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
 .collection-row {
     padding: 10px;
     display: flex;
@@ -132,6 +143,7 @@ body {
     margin: 10px;
     width: 50%;
 }
+
 
 .select-current-user {
     background: green;
@@ -292,6 +304,21 @@ div a,  li a {
 .create-group-form-body {
     padding: 20px 0px;
     background: white;
+}
+
+
+.create-group-form-body input {
+    border-style: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+}
+
+.create-group-form-members {
+    margin: 10px;
+}
+
+.create-group-form-members .col-xs-12 {
+    margin: 15px 0px;
 }
 
 .group-name {

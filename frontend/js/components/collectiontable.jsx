@@ -158,6 +158,8 @@ class CollectionTable extends Component {
                             setCurrentGroupMember={this.setCurrentGroupMember.bind(this)} />);
             console.log("users", typeof Array.from(users));
 
+            let groupMembersSelect = (<select onChange={this.setCurrentGroupMember.bind(this)}>{groupMembersOptions}</select>);
+
         let collectionTable =   (<div>
                                    {navi}
                                    <h2 className="group-name">{this.state.name}</h2>

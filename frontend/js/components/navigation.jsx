@@ -24,14 +24,14 @@ class Navigation extends Component {
                       <h1>SplitDecision</h1>
                     </a>
                 </div>
-                <ul className="col-xs-3 row" style={{alignItems: "center"}}>
-                    <li className="col-xs-3"></li>
-                    <li className="col-xs-3"></li>
-                    <li className="col-xs-3"></li>
-                    <li className="col-xs-3">
-                      {selectCurrentUser}
-                    </li>
-                </ul>
+                <div className="current-user-container col-xs-3">
+                  <ul className="row" style={{alignItems: "center"}}>
+                      <li className="col-xs-3">
+                        Current User:&nbsp;&nbsp;       
+                        {selectCurrentUser}
+                      </li>
+                  </ul>
+                </div>
               </div>
     
 

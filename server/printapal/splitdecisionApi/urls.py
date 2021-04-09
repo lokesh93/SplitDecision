@@ -1,7 +1,10 @@
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from rest_framework import routers
 from . import views
 from django.views.decorators.csrf import csrf_exempt
+
 
 # from django.conf.urls import url, include
 # from django.contrib import admin
@@ -24,5 +27,6 @@ urlpatterns = [
     url(r'creategroup', csrf_exempt(views.GroupCreateView.as_view())),
     url(r'app', views.index, name='index'),
     url(r'about', views.index, name='index'),
+    url(r'page', csrf_exempt(views.PageView.as_view())),
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
