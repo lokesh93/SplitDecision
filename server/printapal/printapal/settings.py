@@ -136,7 +136,8 @@ USE_TZ = True
 STATIC_URL = '/public/'
 
 STATICFILES_DIRS = (
-    os.path.join(FRONT_END_DIR, 'public'),  # update the STATICFILES_DIRS
+    os.path.join(FRONT_END_DIR, 'public'), 
+    os.path.join(FRONT_END_DIR, 'public/screenshots/'),  # update the STATICFILES_DIRS
 )
 
 django_heroku.settings(locals())
